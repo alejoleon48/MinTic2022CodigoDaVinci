@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    background: url("https://thumbs.dreamstime.com/b/fondo-verde-de-la-naturaleza-65278333.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+  }
+
+.cuadros {
+    width: 100%;
+    padding: 0px;
+    border-radius: 4px;
+    margin-bottom: 1px;
+    border: 1px solid #3a14c496;
+    font-size: 15px;
+}
+
+.form-solicitud {
+    width:70%;
+    background: rgba(228, 230, 195, 0.39);
+    border-radius: 16px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: auto;
+    font-family: 'calibri';
+    color: rgb(17, 17, 17);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.1px);
+    -webkit-backdrop-filter: blur(3.1px);
+    border: 1px solid rgba(217, 223, 167, 0.78);
+  }
+
+.form-solicitud h4{
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.form-solicitud h5{
+  font-size: 20px;
+  margin-bottom: 10px;
+  color:rgb(94, 15, 15);
+} 
+
+.form-solicitud a {
+  text-decoration:none; 
+  color:black; 
+  font-size:20px; 
+  margin-top:10px;
+}
+
+.form-solicitud label{
+  margin:auto;
+  font-size: 20px;
+}
+
+.form-solicitud a:hover {
+  color:black;
+  text-decoration: underline;
+}

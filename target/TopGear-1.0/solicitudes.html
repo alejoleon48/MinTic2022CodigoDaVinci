@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="shorcut icon" href="https://cdn-icons-png.flaticon.com/512/1676/1676807.png">
+
+    <link href="assets/css/solicitudes.css" rel="stylesheet">
+
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/solicitudes.css" rel="stylesheet">
+
+
+    <script>
+
+        function MostrarP() {
+            var papel = document.getElementById("MPapel");
+            var aviso = document.getElementById("SMaterial");
+            var checkP = document.getElementById("id_residuoP");
+
+            if (checkP.checked) {
+                papel.style.display = 'block';
+                aviso.style.display = 'none'
+            } else {
+                papel.style.display = 'none';
+            }
+        }
+
+        function MostrarC() {
+            var carton = document.getElementById("MCarton");
+            var checkC = document.getElementById("id_residuoC");
+            var aviso = document.getElementById("SMaterial");
+
+            if (checkC.checked) {
+                carton.style.display = 'block';
+                aviso.style.display = 'none'
+            } else {
+                carton.style.display = 'none';
+            }
+        }
+
+        function MostrarV() {
+            var vidrio = document.getElementById("MVidrio");
+            var checkV = document.getElementById("id_residuoV");
+            var aviso = document.getElementById("SMaterial");
+
+            if (checkV.checked) {
+                vidrio.style.display = 'block';
+                aviso.style.display = 'none'
+            } else {
+                vidrio.style.display = 'none';
+            }
+        }
+
+        function MostrarPl() {
+            var plastico = document.getElementById("MPlastico");
+            var checkPl = document.getElementById("id_residuoPl");
+            var aviso = document.getElementById("SMaterial");
+
+            if (checkPl.checked) {
+                plastico.style.display = 'block';
+                aviso.style.display = 'none'
+            } else {
+                plastico.style.display = 'none';
+            }
+        }
+
+        function MostrarM() {
+            var metal = document.getElementById("MMetales");
+            var checkM = document.getElementById("id_residuoM");
+            var aviso = document.getElementById("SMaterial");
+
+            if (checkM.checked) {
+                metal.style.display = 'block';
+                aviso.style.display = 'none'
+            } else {
+                metal.style.display = 'none';
+            }
+        }
+
+        function MostrarA() {
+            var aceite = document.getElementById("MAceite");
+            var checkA = document.getElementById("id_residuoA");
+            var aviso = document.getElementById("SMaterial");
+
+            if (checkA.checked) {
+                aceite.style.display = 'block';
+                aviso.style.display = 'none'
+            } else {
+                aceite.style.display = 'none';
+            }
+        }
+
+        function Recibido() {
+
+            var aceite = document.getElementById("CantidadAceite").value;
+            var metal = document.getElementById("CantidadMetales").value;
+            var plastico = document.getElementById("CantidadPlastico").value;
+            var vidrio = document.getElementById("CantidadVidrio").value;
+            var papel = document.getElementById("CantidadPapel").value;
+            var carton = document.getElementById("CantidadCarton").value;
+
+            var fechas = document.getElementById("fecha").value;
+
+            suma = parseInt(aceite) + parseInt(metal) + parseInt(plastico)
+                + parseInt(vidrio) + parseInt(papel) + parseInt(carton);
+
+            if (suma >= 10 && fechas != "") {
+                alert("Solicitud enviada, gracias por contactarnos.");
+            } else {
+                alert("La cantidad o la fecha seleccionada es incorrecta, por favor intente de nuevo.");
+            }
+        }
+
+        function filtro() {
+            var tecla = event.key;
+            if (['.', 'e'].includes(tecla))
+                event.preventDefault()
+        }
+
+        function A_fecha(e) {
+
+            const dia = (new Date(e.target.value)).getDay();
+            if (dia != 0 && dia != 3 && dia != 5) {
+                e.target.value = "";
+                alert("La fecha seleccionada es incorrecta, por favor intentelo de nuevo");
+            }
+        }
+
+    </script>
+
+</head>
+
+<body style="margin-top:80px; margin-bottom:20px;">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html"><span> ECO</span>PUNTOS</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+
+
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="portfolio.html">Fundación</a></li>
+                    <li><a href="pricing.html">Reciclaje</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+
+                    <li class="dropdown"><a href="#"><span style="color:#1bbd36;">usuario</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="perfil.html">Mi perfil</a></li>
+                            <li><a href="index.html" style="color:greenyellow">Cerrar sesión</a></li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+            <div class="header-social-links d-flex">
+                <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></a>
+            </div>
+
+        </div>
+    </header><!-- End Header -->
+
+    <form class="form-solicitud">
+
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <h1>Solicitud de recolección</h1>
+            </div>
+        </div>
+
+        <!-- Notas -->
+        <div class="row">
+            <div class="col-12">
+                <h4>Por favor tener en cuenta: <br></h4>
+                <h5>La cantidad minima de material a recoger son 10 kilogramos, además las cantidades se deben ingresar
+                    en
+                    kilogramos.
+                </h5>
+            </div>
+        </div>
+
+        <!-- Material y cantidades -->
+        <div class="row">
+
+            <div class="col-12 d-flex align-items-center">
+                <h4>Seleccione los materiales a recolectar:
+                </h4>
+            </div>
+
+            <div>
+
+                <label for="C_papel">
+                    <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
+                            id="id_residuoP" value="1" name="Papel" onclick="MostrarP()">Papel
+                    </div>
+                </label>
+
+                <label for="C_carton">
+                    <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
+                            id="id_residuoC" value="2" name="Cartón" onclick="MostrarC()">Cartón
+                    </div>
+                </label>
+
+
+                <label for="C_vidrio">
+                    <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
+                            id="id_residuoV" value="3" name="Vidrio" onclick="MostrarV()">Vidrio
+                    </div>
+                </label>
+
+
+                <label for="C_plastico">
+                    <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
+                            id="id_residuoPl" value="4" name="Plástico" onclick="MostrarPl()">Plástico
+                    </div>
+                </label>
+
+
+                <label for="C_metales">
+                    <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
+                            id="id_residuoM" value="5" name="Metales" onclick="MostrarM()">Metales
+                    </div>
+                </label>
+
+
+                <label for="C_aceite">
+                    <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
+                            id="id_residuoA" value="6" name="Aceite" onclick="MostrarA()">Aceite
+                    </div>
+                </label>
+
+            </div>
+            <!-- Materiales a recoger -->
+            <div class="col-12">
+                <h4>Ingrese la cantidad de material a recoger:</h4>
+            </div>
+
+            <div id="SMaterial" class="col-12">
+                <h5>No ha seleccionado ningún material.</h5>
+            </div>
+
+            <div id="MPapel" class="col-12 col-sm-2 " style="display: none;">
+                <input type="number" class="cuadros" name="cantidad_papel" id="CantidadPapel" placeholder="Papel"
+                    onkeydown="filtro()" value=0 min="1" aria-label="Amount" title="Ingrese la cantidad de papel">
+            </div>
+
+            <div id="MCarton" class="col-12 col-sm-2 " style="display: none;">
+                <input type="number" class="cuadros" name="cantidad_carton" id="CantidadCarton" placeholder="Cartón"
+                    onkeydown="filtro()" min="1" value=0 title="Ingrese la cantidad de cartón">
+            </div>
+
+            <div id="MVidrio" class="col-12 col-sm-2 " style="display: none;">
+                <input type="number" class="cuadros" name="cantidad_vidrio" id="CantidadVidrio" placeholder="Vidrio"
+                    onkeydown="filtro()" value=0 min="1" title="Ingrese la cantidad de vidrio">
+            </div>
+
+            <div id="MPlastico" class="col-12 col-sm-2 " style="display: none;">
+                <input type="number" class="cuadros" name="cantidad_plastico" id="CantidadPlastico"
+                    placeholder="Plástico" onkeydown="filtro()" value=0 min="1" title="Ingrese la cantidad de plastico">
+            </div>
+
+            <div id="MMetales" class="col-12 col-sm-2 " style="display: none;">
+                <input type="number" class="cuadros" name="cantidad_metales" id="CantidadMetales" placeholder="Metales"
+                    onkeydown="filtro()" value=0 min="1" title="Ingrese la cantidad de metal">
+            </div>
+
+            <div id="MAceite" class="col-12 col-sm-2 " style="display: none;">
+                <input type="number" class="cuadros" name="cantidad_aceite" id="CantidadAceite" placeholder="Aceite"
+                    onkeydown="filtro()" value=0 min="1" title="Ingrese la cantidad de aceite">
+            </div>
+
+        </div>
+
+        <!-- Fecha -->
+        <div class="row">
+
+            <div class="col-12 d-flex align-items-center" style="margin-top:5px">
+                <h4>
+                    Seleccione el día que desea realicen la recolección
+                </h4>
+
+            </div>
+
+            <div class="col-12 d-flex align-items-center" style="margin-top:0px">
+                <h5>
+                    Tenga en cuenta que las recolecciones se realizan los días lunes, jueves y sábados.
+                </h5>
+            </div>
+
+            <div id="Idfecha" class="col-12  col-sm-2">
+                <input type="date" class="cuadros" name="Fecha" id="fecha" min="26/09/2022" onchange="A_fecha(event)"
+                    required>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12" id="fecha" style="display: none;">
+            </div>
+        </div>
+
+
+        <!-- Botón registrarse -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-primary" onclick="Recibido();" value="Solicitud">Solicitar
+                    recolección</button>
+            </div>
+        </div>
+
+        <!-- Volver a la página -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <a href="home.html">Volver atrás</a>
+            </div>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
