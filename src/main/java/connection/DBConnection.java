@@ -7,9 +7,9 @@ import java.sql.DriverManager;
 public class DBConnection {
     Connection connection;
     static String bd = "car_rental";
-    static String port = "3307";
+    static String port = "3306";
     static String login = "root";
-    static String password = "admin";
+    static String password = "abmin";
 
     public DBConnection() {
         try {
