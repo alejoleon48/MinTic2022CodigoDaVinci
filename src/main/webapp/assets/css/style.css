@@ -42,7 +42,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #1bbd36;
+  background: #622b2b;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -56,7 +56,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #21df41;
+  background: #654848;
   color: #fff;
 }
 
@@ -405,7 +405,7 @@ h6 {
   background: rgba(4, 4, 4, 0.7);
   padding: 20px;
   color: #fff;
-  border-top: 5px solid #1bbd36;
+  border-top: 5px solid #622b2b;
 }
 
 #hero .carousel-content h2 {
@@ -429,11 +429,11 @@ h6 {
   color: #fff;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
-  border: 2px solid #1bbd36;
+  border: 2px solid #4f1010;
 }
 
 #hero .btn-get-started:hover {
-  background: #1bbd36;
+  background: #622b2b;
   color: #fff;
   text-decoration: none;
 }
@@ -502,7 +502,7 @@ h6 {
 
 #hero .carousel-indicators li.active {
   opacity: 1;
-  background: #1bbd36;
+  background: #622b2b;
 }
 
 @media (min-width: 1024px) {
@@ -2245,7 +2245,7 @@ section {
 
 /* Login */
 .body-login {
-            background: url("../img/edificioscity.jpeg");
+            background: url("https://i0.wp.com/eltiempolatino.com/wp-content/uploads/2022/06/venta-de-carros.jpg?fit=1200%2C675&ssl=1");
             background-size: cover;
             background-repeat: no-repeat;
             margin: 0;

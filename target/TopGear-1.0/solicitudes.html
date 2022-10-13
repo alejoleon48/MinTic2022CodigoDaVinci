@@ -149,7 +149,7 @@
             if (suma >= 10 && fechas != "") {
                 alert("Solicitud enviada, gracias por contactarnos.");
             } else {
-                alert("La cantidad o la fecha seleccionada es incorrecta, por favor intente de nuevo.");
+                alert("el numero del vehiculo o la fecha seleccionada es incorrecta, por favor intente de nuevo.");
             }
         }
 
@@ -178,21 +178,21 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html"><span> ECO</span>PUNTOS</a></h1>
+            <h1 class="logo me-auto"><a href="index.html"><span> TOP</span>GEAR</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="index.html">Inicio</a></li>
 
+                    <li><a href="home.html">Portafolio</a></li>
+                   <li><a href="services.html"  class="active">Solicitud</a></li>
+<!--                    
+                   <li><a href="pricing.html">Reciclaje</a></li> 
+                    <li><a href="home.html"></a></li>-->
 
-                    <li><a href="services.html">Servicios</a></li>
-                    <li><a href="portfolio.html">Fundación</a></li>
-<!--                    <li><a href="pricing.html">Reciclaje</a></li> -->
-                    <li><a href="blog.html">Blog</a></li>
-
-                    <li class="dropdown"><a href="#"><span style="color:#1bbd36;">usuario</span> <i
+                    <li class="dropdown"><a href="#"><span>usuario</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="perfil.html">Mi perfil</a></li>
@@ -220,7 +220,7 @@
 
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center">
-                <h1>Solicitud de recolección</h1>
+                <h1>Solicitud de reserva del vehiculo</h1>
             </div>
         </div>
 
@@ -228,9 +228,7 @@
         <div class="row">
             <div class="col-12">
                 <h4>Por favor tener en cuenta: <br></h4>
-                <h5>La cantidad minima de material a recoger son 10 kilogramos, además las cantidades se deben ingresar
-                    en
-                    kilogramos.
+                <h5>Que el valor del alquiler del vehiculo es por hora de servicio.
                 </h5>
             </div>
         </div>
@@ -239,7 +237,7 @@
         <div class="row">
 
             <div class="col-12 d-flex align-items-center">
-                <h4>Seleccione los materiales a recolectar:
+                <h4>Seleccione el vehiculo a reservar:
                 </h4>
             </div>
 
@@ -247,52 +245,52 @@
 
                 <label for="C_papel">
                     <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
-                            id="id_residuoP" value="1" name="Papel" onclick="MostrarP()">Papel
+                            id="id_residuoP" value="1" name="Papel" onclick="MostrarP()">Renualt
                     </div>
                 </label>
 
                 <label for="C_carton">
                     <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
-                            id="id_residuoC" value="2" name="Cartón" onclick="MostrarC()">Cartón
+                            id="id_residuoC" value="2" name="Cartón" onclick="MostrarC()">Peugeot
                     </div>
                 </label>
 
 
                 <label for="C_vidrio">
                     <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
-                            id="id_residuoV" value="3" name="Vidrio" onclick="MostrarV()">Vidrio
+                            id="id_residuoV" value="3" name="Vidrio" onclick="MostrarV()">Mazda
                     </div>
                 </label>
 
 
                 <label for="C_plastico">
                     <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
-                            id="id_residuoPl" value="4" name="Plástico" onclick="MostrarPl()">Plástico
+                            id="id_residuoPl" value="4" name="Plástico" onclick="MostrarPl()">Jeep
                     </div>
                 </label>
 
 
                 <label for="C_metales">
                     <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
-                            id="id_residuoM" value="5" name="Metales" onclick="MostrarM()">Metales
+                            id="id_residuoM" value="5" name="Metales" onclick="MostrarM()">Tesla
                     </div>
                 </label>
 
 
                 <label for="C_aceite">
                     <div class="col-12 col-sm-2 d-flex align-items-center justify-content-center"><input type="checkbox"
-                            id="id_residuoA" value="6" name="Aceite" onclick="MostrarA()">Aceite
+                            id="id_residuoA" value="6" name="Aceite" onclick="MostrarA()">Chevrolet
                     </div>
                 </label>
 
             </div>
             <!-- Materiales a recoger -->
             <div class="col-12">
-                <h4>Ingrese la cantidad de material a recoger:</h4>
+                <h4>Ingrese el vehiculo a seleccionar:</h4>
             </div>
 
             <div id="SMaterial" class="col-12">
-                <h5>No ha seleccionado ningún material.</h5>
+                <h5>No ha seleccionado ningún vehiculo.</h5>
             </div>
 
             <div id="MPapel" class="col-12 col-sm-2 " style="display: none;">
@@ -332,14 +330,14 @@
 
             <div class="col-12 d-flex align-items-center" style="margin-top:5px">
                 <h4>
-                    Seleccione el día que desea realicen la recolección
+                    Seleccione el día que desea realizar la reserva
                 </h4>
 
             </div>
 
             <div class="col-12 d-flex align-items-center" style="margin-top:0px">
                 <h5>
-                    Tenga en cuenta que las recolecciones se realizan los días lunes, jueves y sábados.
+                    Tenga en cuenta que los vehiculos que aparecen en lista se encuentran disponibles
                 </h5>
             </div>
 
@@ -361,7 +359,7 @@
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center">
                 <button type="submit" class="btn btn-primary" onclick="Recibido();" value="Solicitud">Solicitar
-                    recolección</button>
+                    reserva</button>
             </div>
         </div>
 
